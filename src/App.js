@@ -1,6 +1,7 @@
 import { useEffect, useReducer } from "react";
 import Header from "./Header";
 import Main from "./Main";
+import Error from "./Error";
 import Loader from "./Loader";
 
 const initialState = {
@@ -36,14 +37,17 @@ export default function App() {
     fetch("http://localhost:9000/questions")
       .then((res) => res.json())
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
-      .catch((err) => console.error("Error", err));
+      .catch((err) => dispatch({ type: "dataFailed", payload: err }));
   }, []);
 
   return (
     <div className="app">
       <Header />
 
-      <Main>{status === "loading" && <Loader />}</Main>
+      <Main>
+        {status === "loading" && <Loader />}
+        {status === "error" && <Error />}
+      </Main>
     </div>
   );
 }
