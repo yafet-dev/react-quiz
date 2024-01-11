@@ -1,4 +1,4 @@
-function Finishscreen({ points, maxPossiblePoints }) {
+function Finishscreen({ highscore, points, maxPossiblePoints }) {
   const percentage = (points / maxPossiblePoints) * 100;
 
   let emoji;
