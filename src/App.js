@@ -110,7 +110,11 @@ function App() {
         )}
 
         {status === "finished" && (
-          <Finishscreen points={points} maxPossiblePoints={maxPossiblePoints} />
+          <Finishscreen
+            highscore={highscore}
+            points={points}
+            maxPossiblePoints={maxPossiblePoints}
+          />
         )}
       </Main>
     </div>
