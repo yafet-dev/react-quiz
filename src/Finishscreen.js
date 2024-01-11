@@ -14,7 +14,7 @@ function Finishscreen({ highscore, points, maxPossiblePoints }) {
         You scored <strong>{points}</strong> out of {maxPossiblePoints}
         {Math.ceil(percentage)}%
       </p>
-      <p>(Highscore: X points)</p>
+      <p>(Highscore: {highscore} points)</p>
     </>
   );
 }
