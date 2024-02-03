@@ -92,7 +92,12 @@ function App() {
               answer={answer}
               question={questions[index]}
             />
-            <NextButton dispatch={dispatch} answer={answer} />
+            <NextButton
+              numQuestions={numQuestions}
+              index={index}
+              dispatch={dispatch}
+              answer={answer}
+            />
           </>
         )}
 
