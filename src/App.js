@@ -8,6 +8,8 @@ import NextButton from "./NextButton";
 import { useEffect, useReducer } from "react";
 import Progress from "./Progress";
 import Finishscreen from "./Finishscreen";
+import Footer from "./Footer";
+import Timer from "./Timer";
 
 const initialState = {
   questions: [],
@@ -104,12 +106,15 @@ function App() {
               answer={answer}
               question={questions[index]}
             />
-            <NextButton
-              numQuestions={numQuestions}
-              index={index}
-              dispatch={dispatch}
-              answer={answer}
-            />
+            <Footer>
+              <Timer />
+              <NextButton
+                numQuestions={numQuestions}
+                index={index}
+                dispatch={dispatch}
+                answer={answer}
+              />
+            </Footer>
           </>
         )}
 
