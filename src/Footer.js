@@ -1,6 +1,6 @@
 import { children } from "react";
 
-function Footer() {
+function Footer({ children }) {
   return <footer>{children}</footer>;
 }
 
