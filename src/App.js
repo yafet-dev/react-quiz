@@ -18,6 +18,7 @@ const initialState = {
   answer: null,
   points: 0,
   highscore: 0,
+  secondsremaining: 10,
 };
 
 function reducer(state, action) {
@@ -63,6 +64,8 @@ function reducer(state, action) {
         questions: state.questions,
         status: "ready",
       };
+    case "tick":
+      return { ...state };
     default:
       throw new Error("action unknown");
   }
