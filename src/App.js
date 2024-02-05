@@ -110,7 +110,7 @@ function App() {
               question={questions[index]}
             />
             <Footer>
-              <Timer />
+              <Timer dispatch={dispatch} />
               <NextButton
                 numQuestions={numQuestions}
                 index={index}
