@@ -65,14 +65,16 @@ function reducer(state, action) {
         status: "ready",
       };
     case "tick":
-      return { ...state };
+      return { ...state, secondsremaining: state.secondsremaining - 1 };
     default:
       throw new Error("action unknown");
   }
 }
 function App() {
-  const [{ highscore, status, questions, index, answer, points }, dispatch] =
-    useReducer(reducer, initialState);
+  const [
+    { secondsremaining, highscore, status, questions, index, answer, points },
+    dispatch,
+  ] = useReducer(reducer, initialState);
 
   useEffect(function () {
     fetch("http://localhost:9000/questions")
@@ -110,7 +112,7 @@ function App() {
               question={questions[index]}
             />
             <Footer>
-              <Timer dispatch={dispatch} />
+              <Timer dispatch={dispatch} secondsremaining={secondsremaining} />
               <NextButton
                 numQuestions={numQuestions}
                 index={index}
