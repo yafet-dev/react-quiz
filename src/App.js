@@ -57,12 +57,9 @@ function reducer(state, action) {
       };
     case "restart":
       return {
-        questions: [],
-        status: "loading",
-        index: 0,
-        answer: null,
-        points: 0,
-        highscore: 0,
+        ...initialState,
+        questions: state.questions,
+        status: "ready",
       };
     default:
       throw new Error("action unknown");
