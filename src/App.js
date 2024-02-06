@@ -118,6 +118,7 @@ function App() {
 
         {status === "finished" && (
           <Finishscreen
+            dispatch={dispatch}
             highscore={highscore}
             points={points}
             maxPossiblePoints={maxPossiblePoints}
