@@ -65,7 +65,11 @@ function reducer(state, action) {
         status: "ready",
       };
     case "tick":
-      return { ...state, secondsremaining: state.secondsremaining - 1 };
+      return {
+        ...state,
+        status: state.secondsremaining === 0 ? "finished" : state.status,
+        secondsremaining: state.secondsremaining - 1,
+      };
     default:
       throw new Error("action unknown");
   }
