@@ -7,6 +7,7 @@ import Question from "./Question";
 import NextButton from "./NextButton";
 import { useEffect, useReducer } from "react";
 import Progress from "./Progress";
+import Finishscreen from "./Finishscreen";
 
 const initialState = {
   questions: [],
@@ -93,6 +94,10 @@ function App() {
             />
             <NextButton dispatch={dispatch} answer={answer} />
           </>
+        )}
+
+        {status === "finished" && (
+          <Finishscreen points={points} maxPossiblePoints={maxPossiblePoints} />
         )}
       </Main>
     </div>
