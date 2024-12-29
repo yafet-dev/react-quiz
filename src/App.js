@@ -60,10 +60,8 @@ function reducer(state, action) {
   }
 }
 function App() {
-  const [{ status, questions, index, answer, points }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ highscore, status, questions, index, answer, points }, dispatch] =
+    useReducer(reducer, initialState);
 
   useEffect(function () {
     fetch("http://localhost:9000/questions")
