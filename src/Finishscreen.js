@@ -15,6 +15,7 @@ function Finishscreen({ highscore, points, maxPossiblePoints }) {
         {Math.ceil(percentage)}%
       </p>
       <p>(Highscore: {highscore} points)</p>
+      <button className="btn btn-ui">Restart Quiz</button>
     </>
   );
 }
